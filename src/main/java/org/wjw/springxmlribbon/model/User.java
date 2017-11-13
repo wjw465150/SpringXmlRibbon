@@ -1,4 +1,4 @@
-package org.wjw.standardribbon.model;
+package org.wjw.springxmlribbon.model;
 
 public class User {
 	private long id;

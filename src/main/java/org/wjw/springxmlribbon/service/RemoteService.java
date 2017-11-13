@@ -1,6 +1,6 @@
-package org.wjw.standardribbon.service;
+package org.wjw.springxmlribbon.service;
 
-import org.wjw.standardribbon.model.User;
+import org.wjw.springxmlribbon.model.User;
 
 import feign.Headers;
 import feign.Param;

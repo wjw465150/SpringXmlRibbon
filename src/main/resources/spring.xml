@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.springframework.org/schema/beans" xmlns:lang="http://www.springframework.org/schema/lang"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+                           
+  <bean id="ribbonConfig" class="org.wjw.springxmlribbon.RibbonConfig">
+      <property name="clientName" value="service-one"/>
+      <!-- 所有的key都以service-one开头，表明这些配置项作用于名为service-one的服务  -->
+      <property name="properties">
+        <props>
+          <prop key="service-one.ribbon.MaxAutoRetries">1</prop>
+          <prop key="service-one.ribbon.MaxAutoRetriesNextServer">1</prop>
+          <prop key="service-one.ribbon.OkToRetryOnAllOperations">true</prop>
+          <prop key="service-one.ribbon.ServerListRefreshInterval">2000</prop>
+          <prop key="service-one.ribbon.ConnectTimeout">3000</prop>
+          <prop key="service-one.ribbon.ReadTimeout">3000</prop>
+          <prop key="service-one.ribbon.listOfServers">192.168.2.113:8861,192.168.2.114:8861</prop>
+          <prop key="service-one.ribbon.EnablePrimeConnections">false</prop>
+        </props>
+      </property>
+  </bean>
+</beans>
+
